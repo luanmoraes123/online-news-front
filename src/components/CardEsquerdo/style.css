@@ -1,0 +1,41 @@
+.card-esquerdo {
+  border-radius: 10px 10px 0px 10px;
+  box-shadow: 0 0 20px rgba(128, 128, 128, 0.479);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;  
+}
+
+.card-esquerdo .imagem{
+  background-position: center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.card-esquerdo h2{
+  font-size: 15px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+} 
+
+.card-esquerdo button{
+  width: 85%;
+  height: 30px;
+  
+  background-color: #fccd07;
+  
+  border-radius: 5px;
+  border: none;
+  text-align: left;
+  padding-left: 20px ;
+  margin: 0 auto;
+}
+
+.card-esquerdo button a{
+  color: #333;
+  font-size: 18px;
+}

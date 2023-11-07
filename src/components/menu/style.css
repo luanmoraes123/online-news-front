@@ -3,27 +3,27 @@
   justify-content: space-between;
   height: 50px;
   background-color: white;
-  color: red;
+  color: #fccd07;
   align-items: center;
   padding: 0 12px;
 }
 
 .menu button{
   background-color: transparent;
-  color: red;
+  color: #333;
   border: none;
   cursor: pointer;
 }
 
 .menu_lateral {
   height: 100vh;
-  width: 200px;
+  width: 10%;
   background-color: white;
-  color: red;
+  color: #fccd07;
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0 12px;
+  padding: 20px 20px;
 }
 
 .menu_lateral .fechar{
@@ -33,8 +33,41 @@
 .menu_lateral .fechar button{
   background-color: white;
   border: none;
-  color: red;
+  color: #fccd07;
   cursor: pointer;
   font-size: 20px;
+}
+
+.menu .login{
+  background-color: #fccd07;
+  color: #333;
+  width: 60px;
+  height: 25px;
+  font-weight: bolder;
+  text-decoration: underline;
+  border-radius: 5px;
+}
+
+.menu .logo{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu_lateral ul {
+  list-style: none;
+}
+
+.menu_lateral ul li{
+  margin-bottom: 20px;
+}
+
+.menu_lateral a{
+  color: #333;
+  text-decoration: none;
+}
+
+.menu_lateral a:hover{
+  color: #fccd07;
+  text-decoration: underline;
 }
 

@@ -1,7 +1,11 @@
 "use client"
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 const CadastroForm = () => {
+
+  const router = useRouter();
   
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -22,8 +26,19 @@ const CadastroForm = () => {
     }
   }
 
-  const aoSubmeter = (e) => {
+  const aoSubmeter = async (e) => {
     e.preventDefault();
+    try {
+      const formulario = {
+        name: nome,
+        email,
+        password: senha
+      }
+      const result = await axios.post('http://localhost:8080/users', formulario);
+        router.push('/admin/noticia/criar');
+    } catch (error) {
+      alert(error.response.data.message);  
+    }
     console.log('submetido', nome, email, senha);
   }
 

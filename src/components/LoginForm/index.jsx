@@ -1,25 +1,33 @@
 "use client"
 import React, {useState} from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+  const router = useRouter();
+  const [formulario, setFormulario] = useState({
+    email:'',
+    password: ''
+  });
 
-  const aoSubmeter = (e) => {
+  const aoSubmeter = async (e) => {
     e.preventDefault();
-    console.log(email, senha);
+    try {
+      const result = await axios.post('http://localhost:8080/login', formulario);
+      alert(result.data.mensage);
+      router.push('/admin/noticia/criar');
+    } catch (error) {
+      alert(error.response.data.mensage);
+    }
+
   }
 
   const aoAlterarValores = (e) => {
     const {name, value} = e.target;
-    switch(name){
-      case 'email':
-        setEmail(value);
-        break;
-      case 'senha':
-        setSenha(value);
-        break;
-    }
+    setFormulario({
+      ...formulario,
+      [name]: value
+    })
   }
 
   return (
@@ -29,8 +37,8 @@ const LoginForm = () => {
         <input type="text" onChange={aoAlterarValores} name='email' />
       </div>
       <div>
-        <label htmlFor="senha">Senha</label>
-        <input type="password" onChange={aoAlterarValores} name='senha' />
+        <label htmlFor="password">Senha</label>
+        <input type="password" onChange={aoAlterarValores} name='password' />
       </div>
       <button type='submit'> Enviar </button>
     </form>
