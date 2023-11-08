@@ -1,0 +1,14 @@
+.lateral-direito .ultimas{
+  text-align: left;
+  font-size: 10px;
+  width: 90%;
+  margin: 0 auto 30px auto;
+  color: #aaa;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px ;
+}
+
+.lateral-direito{
+  padding: 0px 20px 0px 20px;
+  border-left: 1px solid #aaa;
+}
